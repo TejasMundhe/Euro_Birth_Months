@@ -9,5 +9,13 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 ```
+```{r, echo = FALSE}
+x <- read_csv("birthdates.csv", col_types = cols())
+```
+```{r, echo = FALSE}
+x %>%
+  mutate(birth_date = str_sub(value, 2, 11))
+```
+
 
 
